@@ -1,0 +1,15 @@
+.scroll-container {
+  height: 800px;
+  overflow-y: auto; 
+  margin: 20px; /* Añade unidades para el margen */
+}
+
+.game-container {
+  margin-bottom: 20px; /* Espacio entre cada juego */
+
+}
+
+.card{
+  background-color: #85FFBD;
+  background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);  
+}

@@ -1,0 +1,21 @@
+.header {
+  background-color: rgb(255, 255, 255); 
+  text-decoration-color: black;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: oblique;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-gap: 20px;
+  }
+  
+  .main {
+    grid-column: 1 / span 1; 
+  }
+  

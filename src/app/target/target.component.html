@@ -1,0 +1,23 @@
+<div  class="scroll-container">
+    <div *ngFor="let week of data?.weeks" class="grid-item">
+      <div *ngFor="let game of week.games" class="game-container">
+        <mat-card class="card">
+          <mat-card-header>
+            <mat-card-title-group>
+              <mat-card-title>{{ game.home.name }} vs {{ game.away.name }}</mat-card-title>
+              <mat-card-subtitle>{{ game.venue.city }}, {{ game.venue.state }}, {{ game.venue.country }}</mat-card-subtitle>
+            </mat-card-title-group>
+          </mat-card-header>
+          <mat-card-content>
+            <p>Scheduled: {{ game?.scheduled | date }}</p>
+            <p>Broadcast Network: {{ game?.broadcast?.network }}</p>
+            <p>Weather: {{ game?.weather?.condition }}, {{ game?.weather?.temp }}°F</p>
+            <p>Duration: {{ game?.duration }}</p>
+            <p>Home Points: {{ game?.scoring?.home_points }}</p>
+            <p>Away Points: {{ game?.scoring?.away_points }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  

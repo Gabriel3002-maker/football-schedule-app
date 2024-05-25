@@ -1,0 +1,11 @@
+{
+    "/api": {
+      "target": "https://api.sportradar.com",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+    }
+  }
+  
