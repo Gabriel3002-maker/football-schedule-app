@@ -1,23 +1,30 @@
-<div  class="scroll-container">
-    <div *ngFor="let week of data?.weeks" class="grid-item">
-      <div *ngFor="let game of week.games" class="game-container">
-        <mat-card class="card">
-          <mat-card-header>
-            <mat-card-title-group>
-              <mat-card-title>{{ game.home.name }} vs {{ game.away.name }}</mat-card-title>
-              <mat-card-subtitle>{{ game.venue.city }}, {{ game.venue.state }}, {{ game.venue.country }}</mat-card-subtitle>
-            </mat-card-title-group>
-          </mat-card-header>
-          <mat-card-content>
-            <p>Scheduled: {{ game?.scheduled | date }}</p>
-            <p>Broadcast Network: {{ game?.broadcast?.network }}</p>
-            <p>Weather: {{ game?.weather?.condition }}, {{ game?.weather?.temp }}°F</p>
-            <p>Duration: {{ game?.duration }}</p>
-            <p>Home Points: {{ game?.scoring?.home_points }}</p>
-            <p>Away Points: {{ game?.scoring?.away_points }}</p>
-          </mat-card-content>
-        </mat-card>
-      </div>
-    </div>
+<div class="game-container">
+  <div *ngFor="let week of data" class="game-item">
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title>{{ week?.leagueName  }}</mat-card-title>
+          <mat-card-subtitle>
+            {{ week?.matchDateTime ? (week?.matchDateTime | date:'yyyy-MM-dd HH:mm:ss') : 'No Consta' }}
+            
+            <button mat-button>{{ week?.matchIsFinished ? 'Finalizado' : 'Pendiente' }}</button>
+          </mat-card-subtitle>
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>
+        <div>
+          <span>{{ week?.matchResults[0]?.pointsTeam1 }} - {{ week?.matchResults[1]?.pointsTeam2 }}</span>
+        </div>
+        <div>
+          <img [src]="week?.team1?.teamIconUrl" width="100" height="100" alt="{{ week?.team1?.shortName }} logo" title="{{ week?.team1?.shortName }} logo">
+          VS
+          <img [src]="week?.team2?.teamIconUrl" width="100" height="100" alt="{{ week?.team2?.shortName }} logo" title="{{ week?.team2?.shortName }} logo">
+        </div>
+        <div>
+          <span>{{ week?.team1?.shortName }} - {{ week?.team2?.shortName }}</span>
+        </div>
+      </mat-card-content>
+    </mat-card>
   </div>
-  
+</div>
+

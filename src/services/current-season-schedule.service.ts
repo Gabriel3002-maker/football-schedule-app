@@ -14,7 +14,7 @@ export class CurrentSeasonScheduleService {
 
   getCurrentSeasonSchedule(): Observable<any> {
 
-    const url = '/api/ufl/trial/v7/en/games/current_season/schedule.json?api_key=KHkBgkXXBP8AP8kFcnfvC96EUumYvvvya1rqTdAS';
+    const url = 'https://api.openligadb.de/getmatchdata/bl1';
 
     console.log('Consumiendo servicio: getCurrentSeasonSchedule');
     console.log('URL:', url);
@@ -23,6 +23,19 @@ export class CurrentSeasonScheduleService {
       catchError(this.handleError)
     )
   }
+
+  getCurrentSeasonScheduleByFilter(year: string, month: string): Observable<any> {
+    const url = `https://api.openligadb.de/getmatchdata/bl1/${year}/${month}`;
+  
+    console.log('Consumiendo servicio: getCurrentSeasonSchedule');
+    console.log('URL:', url);
+  
+    return this.http.get(url).pipe(
+      catchError(this.handleError)
+    );
+  }
+  
+ 
 
   private handleError(error: any): Observable<never> {
     console.error('An error occurred:', error);

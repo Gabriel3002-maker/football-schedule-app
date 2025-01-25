@@ -1,15 +1,80 @@
-.scroll-container {
-  height: 800px;
-  overflow-y: auto; 
-  margin: 20px; /* Añade unidades para el margen */
-}
-
 .game-container {
-  margin-bottom: 20px; /* Espacio entre cada juego */
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 80vh;  
+  overflow-y: auto;  
+  padding: 10px;
 }
 
-.card{
-  background-color: #85FFBD;
-  background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);  
+.game-item {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 600px; 
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  background-color: #fff;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.mat-card-header {
+  background-color: #f1f1f1;
+  padding: 15px;
+}
+
+.mat-card-title-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mat-card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.mat-card-subtitle {
+  font-size: 14px;
+  color: #555;
+}
+
+button[mat-button] {
+  background-color: #008CBA;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button[mat-button]:hover {
+  background-color: #007B9E;
+}
+
+.mat-card-content {
+  padding: 15px;
+}
+
+.game-item div {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.game-item img {
+  margin: 0 10px;
+  border-radius: 50%;
+}
+
+.game-item span {
+  font-size: 16px;
+  font-weight: bold;
 }
