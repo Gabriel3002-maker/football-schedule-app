@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentSeasonScheduleService } from '../../services/current-season-schedule.service';
 import { CommonModule } from '@angular/common';
+import {MatCardModule} from '@angular/material/card';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 
 @Component({
   selector: 'app-target',
   standalone: true,
-  imports: [  CommonModule , ScrollingModule],
+  imports: [  CommonModule , MatCardModule , ScrollingModule],
   templateUrl: './target.component.html',
   styleUrl: './target.component.css'
 })

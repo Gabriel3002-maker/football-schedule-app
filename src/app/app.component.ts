@@ -10,7 +10,7 @@ import { TargetComponent } from './target/target.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatToolbarModule,  MatCardModule, MatIconModule, CalendarComponent ,  TargetComponent ],
+  imports: [MatToolbarModule, MatCardModule, MatIconModule, CalendarComponent, TargetComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
